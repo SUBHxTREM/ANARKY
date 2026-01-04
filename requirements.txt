@@ -1,0 +1,10 @@
+telethon
+python-dotenv
+requests
+pdf2image
+pytz
+wikipedia
+beautifulsoup4
+telegraph
+google_images_search
+

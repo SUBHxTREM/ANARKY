@@ -1,0 +1,22 @@
+{
+  "name": "ANARKY Userbot",
+  "description": "A modular, chaotic Telegram userbot by SUBHxTREM.",
+  "logo": "https://raw.githubusercontent.com/SUBHxTREM/ANARKY/anarky.jpg",
+  "repository": "https://github.com/SUBHxTREM/ANARKY",
+  "keywords": ["telegram", "userbot", "python", "anarky"],
+  "env": {
+    "API_ID": {
+      "description": "Get this from my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this from my.telegram.org",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
