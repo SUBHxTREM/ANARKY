@@ -38,14 +38,30 @@ async def alive_cmd(event):
     chosen_ascii = random.choice(ASCII_LIST)
     chosen_roast = random.choice(ROASTS)
     
-    if os.path.exists('anarky.jpg'):
+    # The Funny Link Message
+    alive_msg = (
+        f"**⚡ ANARKY SYSTEM: ONLINE**\n\n"
+        f"**User:** ||You (Unfortunately)||\n"
+        f"**Status:** Fueling the chaos.\n"
+        f"**Python:** 3.10 (Snake Style)\n\n"
+        f"_{chosen_roast}_\n\n"
+        f"🏴‍☠️ **[The Blueprint for Chaos (GitHub)](https://github.com/SUBHxTREM/ANARKY)**\n"
+        f"_(Star the repo or I'll crash your wifi.)_"
+    )
+        
+    img_path = 'assets/anarky.jpg'
+    
+    # Send image if it exists, otherwise edit message with link preview
+    if os.path.exists(img_path):
         await client.send_file(
-            event.chat_id, 'anarky.jpg', 
-            caption=f"**I am here.**\n\n_{chosen_roast}_\n\n`Status: LEGENDARY`"
+            event.chat_id, img_path, 
+            caption=alive_msg
         )
         await event.delete()
     else:
-        await event.edit(f"```\n{chosen_ascii}\n```\n**SYSTEM STATUS: ONLINE**\n_{chosen_roast}_")
+        # link_preview=True forces the GitHub card
+        await event.edit(alive_msg, link_preview=True)
+
 
 @register(pattern=r"^\.status$", help_text="System stats")
 async def status_cmd(event):
@@ -193,3 +209,4 @@ if __name__ == '__main__':
     load_plugins()
 
     client.loop.run_until_complete(main())
+
