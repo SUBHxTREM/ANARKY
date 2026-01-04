@@ -152,7 +152,7 @@ async def main():
     if not os.path.exists('anarky.jpg') or os.path.getsize('anarky.jpg') < 1000:
         print(">> 'anarky.jpg' missing/corrupt. Attempting download...")
         try:
-            url = "https://raw.githubusercontent.com/SUBHxTREM/ANARKY/main/anarky.jpg"
+            url = "https://raw.githubusercontent.com/SUBHxTREM/ANARKY/main/assets/anarky.jpg"
             urllib.request.urlretrieve(url, 'anarky.jpg')
             print(">> Download attempted.")
         except: pass
@@ -191,4 +191,5 @@ async def main():
 
 if __name__ == '__main__':
     load_plugins()
+
     client.loop.run_until_complete(main())
